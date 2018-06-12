@@ -18,11 +18,17 @@ use Illuminate\Http\Request;
  */
 Route::resource('customers', 'Customer\CustomerController', ['only' => ['index', 'show']]);
 Route::resource('customers.transactions', 'Customer\CustomerTransactionController', ['only' => ['index']]);
+Route::resource('customers.products', 'Customer\CustomerProductController', ['only' => ['index']]);
+Route::resource('customers.companies', 'Customer\CustomerCompanyController', ['only' => ['index']]);
+Route::resource('customers.groups', 'Customer\CustomerGroupController', ['only' => ['index']]);
 
 /**
  * Groups
  */
 Route::resource('groups', 'Group\GroupController', ['except' => ['create', 'edit']]);
+Route::resource('groups.products', 'Group\GroupProductController', ['only' => ['index']]);
+Route::resource('groups.transactions', 'Group\GroupTransactionController', ['only' => ['index']]);
+Route::resource('groups.customers', 'Group\GroupCustomerController', ['only' => ['index']]);
 
 /**
  * Products

@@ -22,6 +22,9 @@ class Product extends Model
 		'level',
 		'company_id',
 	];
+	protected $hidden = [
+		'pivot'
+	];
 
 	public function isAvailable()
 	{
