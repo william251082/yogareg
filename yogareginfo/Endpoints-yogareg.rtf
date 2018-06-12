@@ -1,0 +1,70 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red252\green92\blue95;\red0\green0\blue0;\red47\green181\blue229;
+\red64\green11\blue217;\red242\green242\blue242;\red47\green180\blue29;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c45654\c44470;\csgray\c0\c85000;\cssrgb\c20593\c76036\c91968;
+\cssrgb\c32309\c18668\c88228;\csgray\c95825;\cssrgb\c20239\c73899\c14948;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs20 \cf2 \cb3 \CocoaLigature0 williamdelrosario\cf4  (dev *)\cf5  yogareg\cf6 \
+\cf5 $ \cf6 php artisan route:list\
++--------+-----------+-----------------------------------------------+------------------------------+------------------------------------------------------------------------+------------+\
+|\cf7  Domain \cf6 |\cf7  Method    \cf6 |\cf7  URI                                           \cf6 |\cf7  Name                         \cf6 |\cf7  Action                                                                 \cf6 |\cf7  Middleware \cf6 |\
++--------+-----------+-----------------------------------------------+------------------------------+------------------------------------------------------------------------+------------+\
+|        | GET|HEAD  | /                                             |                              | Closure                                                                | web        |\
+|        | GET|HEAD  | companies                                     | companies.index              | App\\Http\\Controllers\\Company\\CompanyController@index                   | api        |\
+|        | GET|HEAD  | companies/\{company\}                           | companies.show               | App\\Http\\Controllers\\Company\\CompanyController@show                    | api        |\
+|        | GET|HEAD  | companies/\{company\}/customers                 | companies.customers.index    | App\\Http\\Controllers\\Company\\CompanyCustomerController@index           | api        |\
+|        | GET|HEAD  | companies/\{company\}/groups                    | companies.groups.index       | App\\Http\\Controllers\\Company\\CompanyGroupController@index              | api        |\
+|        | POST      | companies/\{company\}/products                  | companies.products.store     | App\\Http\\Controllers\\Company\\CompanyProductController@store            | api        |\
+|        | GET|HEAD  | companies/\{company\}/products                  | companies.products.index     | App\\Http\\Controllers\\Company\\CompanyProductController@index            | api        |\
+|        | DELETE    | companies/\{company\}/products/\{product\}        | companies.products.destroy   | App\\Http\\Controllers\\Company\\CompanyProductController@destroy          | api        |\
+|        | PUT|PATCH | companies/\{company\}/products/\{product\}        | companies.products.update    | App\\Http\\Controllers\\Company\\CompanyProductController@update           | api        |\
+|        | GET|HEAD  | companies/\{company\}/transactions              | companies.transactions.index | App\\Http\\Controllers\\Company\\CompanyTransactionController@index        | api        |\
+|        | GET|HEAD  | customers                                     | customers.index              | App\\Http\\Controllers\\Customer\\CustomerController@index                 | api        |\
+|        | GET|HEAD  | customers/\{customer\}                          | customers.show               | App\\Http\\Controllers\\Customer\\CustomerController@show                  | api        |\
+|        | GET|HEAD  | customers/\{customer\}/companies                | customers.companies.index    | App\\Http\\Controllers\\Customer\\CustomerCompanyController@index          | api        |\
+|        | GET|HEAD  | customers/\{customer\}/groups                   | customers.groups.index       | App\\Http\\Controllers\\Customer\\CustomerGroupController@index            | api        |\
+|        | GET|HEAD  | customers/\{customer\}/products                 | customers.products.index     | App\\Http\\Controllers\\Customer\\CustomerProductController@index          | api        |\
+|        | GET|HEAD  | customers/\{customer\}/transactions             | customers.transactions.index | App\\Http\\Controllers\\Customer\\CustomerTransactionController@index      | api        |\
+|        | GET|HEAD  | groups                                        | groups.index                 | App\\Http\\Controllers\\Group\\GroupController@index                       | api        |\
+|        | POST      | groups                                        | groups.store                 | App\\Http\\Controllers\\Group\\GroupController@store                       | api        |\
+|        | PUT|PATCH | groups/\{group\}                                | groups.update                | App\\Http\\Controllers\\Group\\GroupController@update                      | api        |\
+|        | GET|HEAD  | groups/\{group\}                                | groups.show                  | App\\Http\\Controllers\\Group\\GroupController@show                        | api        |\
+|        | DELETE    | groups/\{group\}                                | groups.destroy               | App\\Http\\Controllers\\Group\\GroupController@destroy                     | api        |\
+|        | GET|HEAD  | groups/\{group\}/customers                      | groups.customers.index       | App\\Http\\Controllers\\Group\\GroupCustomerController@index               | api        |\
+|        | GET|HEAD  | groups/\{group\}/products                       | groups.products.index        | App\\Http\\Controllers\\Group\\GroupProductController@index                | api        |\
+|        | GET|HEAD  | groups/\{group\}/transactions                   | groups.transactions.index    | App\\Http\\Controllers\\Group\\GroupTransactionController@index            | api        |\
+|        | GET|HEAD  | home                                          | home                         | App\\Http\\Controllers\\HomeController@index                              | web,auth   |\
+|        | GET|HEAD  | login                                         | login                        | App\\Http\\Controllers\\Auth\\LoginController@showLoginForm                | web,guest  |\
+|        | POST      | login                                         |                              | App\\Http\\Controllers\\Auth\\LoginController@login                        | web,guest  |\
+|        | POST      | logout                                        | logout                       | App\\Http\\Controllers\\Auth\\LoginController@logout                       | web        |\
+|        | POST      | password/email                                | password.email               | App\\Http\\Controllers\\Auth\\ForgotPasswordController@sendResetLinkEmail  | web,guest  |\
+|        | POST      | password/reset                                |                              | App\\Http\\Controllers\\Auth\\ResetPasswordController@reset                | web,guest  |\
+|        | GET|HEAD  | password/reset                                | password.request             | App\\Http\\Controllers\\Auth\\ForgotPasswordController@showLinkRequestForm | web,guest  |\
+|        | GET|HEAD  | password/reset/\{token\}                        | password.reset               | App\\Http\\Controllers\\Auth\\ResetPasswordController@showResetForm        | web,guest  |\
+|        | GET|HEAD  | products                                      | products.index               | App\\Http\\Controllers\\Product\\ProductController@index                   | api        |\
+|        | GET|HEAD  | products/\{product\}                            | products.show                | App\\Http\\Controllers\\Product\\ProductController@show                    | api        |\
+|        | GET|HEAD  | products/\{product\}/customers                  | products.customers.index     | App\\Http\\Controllers\\Product\\ProductCustomerController@index           | api        |\
+|        | GET|HEAD  | products/\{product\}/customers/\{customer\}       | products.customers.show      | App\\Http\\Controllers\\Product\\ProductCustomerController@show            | api        |\
+|        | GET|HEAD  | products/\{product\}/groups                     | products.groups.index        | App\\Http\\Controllers\\Product\\ProductGroupController@index              | api        |\
+|        | PUT|PATCH | products/\{product\}/groups/\{group\}             | products.groups.update       | App\\Http\\Controllers\\Product\\ProductGroupController@update             | api        |\
+|        | DELETE    | products/\{product\}/groups/\{group\}             | products.groups.destroy      | App\\Http\\Controllers\\Product\\ProductGroupController@destroy            | api        |\
+|        | GET|HEAD  | products/\{product\}/transactions               | products.transactions.index  | App\\Http\\Controllers\\Product\\ProductTransactionController@index        | api        |\
+|        | GET|HEAD  | products/\{product\}/transactions/\{transaction\} | products.transactions.show   | App\\Http\\Controllers\\Product\\ProductTransactionController@show         | api        |\
+|        | POST      | register                                      |                              | App\\Http\\Controllers\\Auth\\RegisterController@register                  | web,guest  |\
+|        | GET|HEAD  | register                                      | register                     | App\\Http\\Controllers\\Auth\\RegisterController@showRegistrationForm      | web,guest  |\
+|        | GET|HEAD  | transactions                                  | transactions.index           | App\\Http\\Controllers\\Transaction\\TransactionController@index           | api        |\
+|        | GET|HEAD  | transactions/\{transaction\}                    | transactions.show            | App\\Http\\Controllers\\Transaction\\TransactionController@show            | api        |\
+|        | GET|HEAD  | transactions/\{transaction\}/companies          | transactions.companies.index | App\\Http\\Controllers\\Transaction\\TransactionCompanyController@index    | api        |\
+|        | GET|HEAD  | transactions/\{transaction\}/groups             | transactions.groups.index    | App\\Http\\Controllers\\Transaction\\TransactionGroupController@index      | api        |\
+|        | GET|HEAD  | transactions/\{transaction\}/groups/\{group\}     | transactions.groups.show     | App\\Http\\Controllers\\Transaction\\TransactionGroupController@show       | api        |\
+|        | POST      | users                                         | users.store                  | App\\Http\\Controllers\\User\\UserController@store                         | api        |\
+|        | GET|HEAD  | users                                         | users.index                  | App\\Http\\Controllers\\User\\UserController@index                         | api        |\
+|        | DELETE    | users/\{user\}                                  | users.destroy                | App\\Http\\Controllers\\User\\UserController@destroy                       | api        |\
+|        | PUT|PATCH | users/\{user\}                                  | users.update                 | App\\Http\\Controllers\\User\\UserController@update                        | api        |\
+|        | GET|HEAD  | users/\{user\}                                  | users.show                   | App\\Http\\Controllers\\User\\UserController@show                          | api        |\
++--------+-----------+-----------------------------------------------+------------------------------+------------------------------------------------------------------------+------------+\
+\cf2 williamdelrosario\cf4  (dev *)\cf5  yogareg\cf6 \
+}
