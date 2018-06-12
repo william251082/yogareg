@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Customer;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class CustomerController extends Controller
+class CustomerController extends ApiController
 {
 	/**
 	 * Display a listing of the resource.
@@ -17,7 +17,7 @@ class CustomerController extends Controller
 	{
 		$customers = Customer::has('transactions')->get();
 
-		return response()->json(['data' => $customers], 200);
+		return $this->showAll($customers);
 	}
 
 	/**
@@ -26,9 +26,8 @@ class CustomerController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id)
+	public function show(Customer $customer)
 	{
-		 $customer = Customer::has('transactions')->findOrFail($id);
-		return response()->json(['data' => $customer], 200);
+		return $this->showOne($customer);
 	}
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Group;
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
-class GroupController extends Controller
+class GroupController extends ApiController
 {
     //
 }

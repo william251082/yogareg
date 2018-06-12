@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Company;
 
 use App\Company;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 
-class CompanyController extends Controller
+class CompanyController extends ApiController
 {
 	/**
 	 * Display a listing of the resource.
@@ -17,7 +17,7 @@ class CompanyController extends Controller
 	{
 		$companies = Company::has('products')->get();
 
-		return response()->json(['data' => $companies], 200);
+		return $this->showAll($companies);
 	}
 
 	/**
@@ -26,9 +26,8 @@ class CompanyController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show($id)
+	public function show(Company $company)
 	{
-		$company = Company::has('products')->findOrFail($id);
-		return response()->json(['data' => $company], 200);
+		return $this->showOne($company);
 	}
 }
