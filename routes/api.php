@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
  * Customers
  */
 Route::resource('customers', 'Customer\CustomerController', ['only' => ['index', 'show']]);
+Route::resource('customers.transactions', 'Customer\CustomerTransactionController', ['only' => ['index']]);
 
 /**
  * Groups
@@ -37,6 +38,8 @@ Route::resource('companies', 'Company\CompanyController', ['only' => ['index', '
  * Transactions
  */
 Route::resource('transactions', 'Transaction\TransactionController', ['only' => ['index', 'show']]);
+Route::resource('transactions.groups', 'Transaction\TransactionGroupController', ['only' => ['index', 'show']]);
+Route::resource('transactions.companies', 'Transaction\TransactionCompanyController', ['only' => ['index']]);
 
 /**
  * Users

@@ -60,6 +60,8 @@ $factory->define(Transaction::class, function (Faker\Generator $faker) {
 	$customer = User::all()->except($company->id)->random();
 
 	return [
+		'attendance' => $faker->randomElement([Transaction::ABSENT, Transaction::PRESENT]),
+		'payment_method' => $faker->randomElement([Transaction::CARD, Transaction::CASH]),
 		'credits' => $faker->numberBetween(1, 100),
 		'customer_id' => $customer->id,
 		'product_id' => $company->products->random()->id,
