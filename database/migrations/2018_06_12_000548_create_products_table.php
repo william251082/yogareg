@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
 			$table->string('level');
 			$table->integer('company_id')->unsigned();
 			$table->timestamps();
+			$table->softDeletes(); // delete_at
 
 			$table->foreign('company_id')->references('id')->on('users');
 		});
