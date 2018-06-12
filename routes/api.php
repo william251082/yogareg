@@ -34,11 +34,18 @@ Route::resource('groups.customers', 'Group\GroupCustomerController', ['only' => 
  * Products
  */
 Route::resource('products', 'Product\ProductController', ['only' => ['index', 'show']]);
+Route::resource('products.transactions', 'Product\ProductTransactionController', ['only' => ['index', 'show']]);
+Route::resource('products.customers', 'Product\ProductCustomerController', ['only' => ['index', 'show']]);
+Route::resource('products.groups', 'Product\ProductGroupController', ['only' => ['index', 'update', 'destroy']]);
 
 /**
  * Companies
  */
 Route::resource('companies', 'Company\CompanyController', ['only' => ['index', 'show']]);
+Route::resource('companies.transactions', 'Company\CompanyTransactionController', ['only' => ['index']]);
+Route::resource('companies.groups', 'Company\CompanyGroupController', ['only' => ['index']]);
+Route::resource('companies.customers', 'Company\CompanyCustomerController', ['only' => ['index']]);
+Route::resource('companies.products', 'Company\CompanyProductController', ['except' => ['create', 'show', 'edit']]);
 
 /**
  * Transactions

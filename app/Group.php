@@ -9,10 +9,15 @@ class Group extends Model
 {
 	use SoftDeletes;
 
+	const AVAILABLE_GROUP = 'available';
+	const UNAVAILABLE_GROUP = 'unavailable';
+
 	protected $dates = ['deleted_at'];
 	protected $fillable = [
 		'name',
 		'description',
+		'participants'
+
 	];
 	protected $hidden = [
 		'pivot'

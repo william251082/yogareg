@@ -38,6 +38,8 @@ $factory->define(Group::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->word,
 		'description' => $faker->paragraph(1),
+		'participants' => $faker->numberBetween(1, 10),
+		'status' => $faker->randomElement([Group::AVAILABLE_GROUP, Group::UNAVAILABLE_GROUP]),
 	];
 });
 
