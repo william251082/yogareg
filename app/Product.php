@@ -15,8 +15,8 @@ class Product extends Model
 		'description',
 		'quantity',
 		'status',
-		'image',
-		'seller_id',
+		'level',
+		'company_id',
 	];
 
 	public function isAvailable()

@@ -1,5 +1,6 @@
 <?php
 
+use App\Product;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,10 +20,9 @@ class CreateProductsTable extends Migration
 			$table->string('description', 1000);
 			$table->integer('quantity')->unsigned();
 			$table->string('status')->default(Product::UNAVAILABLE_PRODUCT);
-			$table->string('image');
-			$table->integer('customer_id')->unsigned();
+			$table->string('level');
+			$table->integer('company_id')->unsigned();
 			$table->timestamps();
-			$table->softDeletes();
 
 			$table->foreign('company_id')->references('id')->on('users');
 		});
